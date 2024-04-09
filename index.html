@@ -1,33 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Maintenance</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: rgb(23, 23, 23);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .message {
-            text-align: center;
-            color: white;
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            border: 2px solid white;
-            border-radius: 10px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haunted Configs</title>
+<style>
+    body {
+        background-color: rgb(23, 23, 23);
+        padding: 20px;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .button-container {
+        border: 2px solid #7a7a7a;
+        border-radius: 20px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        width: 400px;
+        margin-bottom: 10px;
+    }
+
+    .box,
+    .roblox-box {
+        width: 200px;
+        height: 120px;
+        border-radius: 20px;
+        background-color: rgba(0, 0, 0, 0.2);
+        border: 2px solid #3f3f3f;
+        opacity: 0;
+        animation: fadeIn 2s forwards;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 20px;
+        transition: background-color 0.3s;
+    }
+
+    .box:hover,
+    .roblox-box:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .box:hover, .roblox-box:hover {
+        cursor: pointer; /* Change cursor to pointer on hover */
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .button-container {
+        border: 2px solid rgb(100, 100, 100);
+        border-radius: 20px;
+        padding: 10px;
+        display: inline-block;
+        text-align: center;
+    }
+
+    .fading-text {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(0, -50%);
+        font-size: 18px;
+        color: white;
+        animation: fadeText 3s infinite alternate;
+    }
+
+    @keyframes fadeText {
+        0% { color: white; }
+        50% { color: black; }
+        100% { color: white; }
+    }
+
+    /* Add styles for the buttons that fade in */
+    .fade-in {
+        animation: fadeInButtons 1s forwards;
+    }
+
+    @keyframes fadeInButtons {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    /* Added margin to the Roblox Tools button */
+    .roblox-box {
+        margin-right: 10px;
+    }
+</style>
 </head>
 <body>
-    <div class="message">
-        <h1>🚧 Oops! Website Down for Maintenance 🚧</h1>
-        <p>Sorry, We Have Found Errors. We Are Fixing Them Asap!</p>
+    <div class="button-container">
+        <div class="container">
+            <div class="box">Home</div>
+            <div class="box" style="margin-left: 10px;" id="configsButton">Configs</div>
+        </div>
+        <div class="container">
+            <div class="roblox-box" id="scriptsButton">Roblox Scripts</div>
+            <div class="roblox-box" id="fortniteButton">Fortnite [SOON]</div>
+            <div class="roblox-box" id="toolsButton">Roblox Tools</div>
+        </div>
     </div>
+
+    <script>
+        document.getElementById('configsButton').addEventListener('click', function() {
+            // Directly initiate the download
+            window.location.href = "https://cdn.discordapp.com/attachments/1219718105438355518/1226990167080964208/New_folder_4.zip?ex=6626c6a4&is=661451a4&hm=81b023f31aee2f4a5fa0277cceedf840fb49cc66ca0375ab1ba939d3d32355b8&";
+        });
+
+        document.getElementById('scriptsButton').addEventListener('click', function() {
+            // Directly initiate the download
+            window.location.href = "https://cdn.discordapp.com/attachments/1219718105438355518/1226992223686627348/paid_leaked_scripts.rar?ex=6626c88e&is=6614538e&hm=c106ff86cda158e7cb105701b2bb08fbd1a3e070cabb3cbf84fb687ab29d6844&";
+        });
+
+        document.getElementById('fortniteButton').addEventListener('click', function() {
+            // Handle the click event for the Fortnite button
+            alert('Coming Soon!');
+            // Add your desired functionality here
+        });
+
+        document.getElementById('toolsButton').addEventListener('click', function() {
+            // Redirect to a blank page with the specified background color
+            var blankPage = window.open('about:blank', '_blank');
+            var buttonsHTML = `
+                <html>
+                    <head>
+                        <title>Blank Page</title>
+                        <style>
+                            body {
+                                background-color: rgb(23, 23, 23);
+                                margin: 0;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 100vh;
+                            }
+                            .button {
+                                width: 200px;
+                                height: 120px;
+                                border-radius: 20px;
+                                border: 2px solid #646464;
+                                background-color: transparent;
+                                margin: 10px;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                color: white;
+                                font-size: 20px;
+                                transition: background-color 0.3s;
+                            }
+                            .button:hover {
+                                background-color: rgba(255, 255, 255, 0.1);
+                                cursor: pointer;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <div class="button fade-in" onclick="alert('Are You Retarded Zigga')">Bypassed Executor</div>
+                        <div class="button fade-in" onclick="alert('Are You Retarded Zigga')">Coming Soon</div>
+                        <div class="button fade-in" onclick="history.back()">Back</div>
+                    </body>
+                </html>
+            `;
+            blankPage.document.write(buttonsHTML);
+        });
+    </script>
 </body>
 </html>
